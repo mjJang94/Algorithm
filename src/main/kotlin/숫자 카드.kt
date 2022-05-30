@@ -1,3 +1,4 @@
+import java.lang.StringBuilder
 import java.util.*
 
 
@@ -9,7 +10,7 @@ import java.util.*
  */
     fun main() = with(Scanner(System.`in`)) {
 
-        val buffer = StringBuffer()
+        val buffer = StringBuilder()
         val N = nextInt()
         val array = IntArray(N)
 

@@ -10,7 +10,7 @@ import java.util.*
  */
     fun main() = with(Scanner(System.`in`)) {
 
-        val buffer = StringBuilder()
+        val builder = StringBuilder()
         val N = nextInt()
         val array = IntArray(N)
 
@@ -32,7 +32,7 @@ import java.util.*
                 val cardNumber = array[index]
 
                 if (cardNumber == checkTargetNumber){
-                    buffer.append(1).append(" ")
+                    builder.append(1).append(" ")
                     break
                 }
 
@@ -43,13 +43,13 @@ import java.util.*
                 }
 
                 if (left > right){
-                    buffer.append(0).append(" ")
+                    builder.append(0).append(" ")
                     break
                 }
             }
         }
 
-        println(buffer)
+        println(builder)
     }
 
 

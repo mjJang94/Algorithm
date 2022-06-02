@@ -1,3 +1,5 @@
+import java.io.BufferedReader
+import java.io.InputStreamReader
 import kotlin.collections.HashSet
 
 //3 4
@@ -18,22 +20,23 @@ import kotlin.collections.HashSet
 // 이름은 띄어쓰기 없이 알파벳 소문자로만 이루어지며, 그 길이는 20 이하이다. N, M은 500,000 이하의 자연수이다.
 // 듣도 못한 사람의 명단에는 중복되는 이름이 없으며, 보도 못한 사람의 명단도 마찬가지이다.
 
-fun main() = with(System.`in`.bufferedReader()) {
+fun main() = with(BufferedReader(InputStreamReader(System.`in`))) {
 
+    val (N, M) = readLine().split(' ').map { it.toInt() }
     val list = mutableListOf<String>()
     val set = HashSet<String>()
-    val (N,M) = readLine().split(' ').map { it.toInt() }
+    val sb = StringBuilder()
 
-    repeat(N){
+    repeat(N) {
         set.add(readLine())
     }
-    repeat(M){
+    repeat(M) {
         val value = readLine()
         if (set.contains(value)) list.add(value)
     }
 
-    val sb = StringBuilder().appendLine(list.size)
-    list.sorted().forEach{
+    sb.appendLine(list.size)
+    list.sorted().forEach {
         sb.appendLine(it)
     }
 
